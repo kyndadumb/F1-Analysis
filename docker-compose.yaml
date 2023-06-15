@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  sql-server-db:
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:latest
+    user: root
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "F12022PyODBC!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+    volumes:
+      - ./mssql_data:/var/opt/mssql/data
